@@ -1,0 +1,12 @@
+node_modules/
+.idea/
+.netbeans.xml
+npm-debug.log*
+
+# ignore all files starting with . or ~	
+.*
+~*
+!.gitignore
+
+
+
