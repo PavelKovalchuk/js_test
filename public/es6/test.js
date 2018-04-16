@@ -1,10 +1,14 @@
 "use strict";
 
-const o = {
-    name: 'Helen',
-    sayName(){
-        console.log('My name is ' + this.name);
-    }
-};
+const f = (function () {
 
-o.sayName();
+    let count = 0;
+
+    return function () {
+        return `I was called ${++count} times`;
+	};
+
+})();
+
+console.log(f());
+console.log(f());
