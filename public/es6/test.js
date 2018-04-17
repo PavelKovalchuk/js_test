@@ -73,3 +73,4 @@ car2.shift('R');
 
 console.log(car1);
 console.log(car2);
+
