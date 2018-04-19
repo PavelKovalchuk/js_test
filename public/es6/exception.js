@@ -19,7 +19,7 @@ if(validatedEmail instanceof Error){
 try{
     const validatedEmail2 = validateEmail(email);
     if(validatedEmail2 instanceof Error){
-        console.log(`Eror 2, guys, ${validatedEmail3.message}`);
+        //console.log(`Eror 2, guys, ${validatedEmail3.message}`);
     }else{
         console.log(`Valid email2 ${validatedEmail2}`);
     }
