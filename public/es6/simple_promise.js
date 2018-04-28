@@ -1,11 +1,11 @@
 const myPromise = ()=>{
     "use strict";
 
-    return new Promise(
+    /*return new Promise(
         (resolve, reject)=>{
             resolve(' Promise executes normal ');
         }
-    );
+    );*/
 
 };
 

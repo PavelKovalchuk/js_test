@@ -1,6 +1,6 @@
 function required(paramName) {
 
-    return false;
+    //return false;
     throw `Parameter ${paramName} is required`;
 
 }
