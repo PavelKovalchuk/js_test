@@ -97,15 +97,82 @@ console.log('____________________________________________');
 
 //--------------3.2. Деструктурирование вложенных объектов в параметрах функции---//
 
+var car = {
+    model: 'bmw 2018',
+    engine: {
+        v6: true,
+        turbo: true,
+        vin: 12345
+    },
+    places: [
+        'first',
+        'second',
+        'third'
+    ]
+
+};
+
+const modelAndVIN = ({ model, engine: {vin}, places: [dd,ss,gg] }) => {
+
+    console.log(`model: ${model} and vin is ${vin}`);
+    console.log(`places info: ${dd} ${ss} ${gg}`);
 
 
+};
+
+modelAndVIN(car);
 
 
+//---------------3.3. Слияние объектов---------------//
+
+let object1 = { a:1, b:2,c:3 };
+let object2 = { b:30, c:40, d:50};
+let merged = { ...object1, ...object2}; //применим оператор расширения для формирования нового объекта
+
+//Ключи свойств объекта №2 переопределят ключи свойств объекта №1.
+console.log('merged: ', merged);
+
+//-------------------------------------------------4. Коллекции---------------------------------------//
+
+//-------------------4.1. Удаление повторяющихся значений из массивов---------------//
+
+let arr22 = [1,1,5,2,6,8,5,1,2,1];
+let deduped = [ ... new Set(arr22) ];
+console.log('deduped: ', deduped);
+
+//----------------4.2. Использование методов массивов с коллекциями-----------//
+
+let mySet = new Set([1,2,3,4,5,6]);
+mySet.add(44);
+var filtered = [...mySet].filter(
+    (x) => x > 3
+);
+
+console.log('filtered: ', filtered);
 
 
+//---------------------------------------------------5. Деструктурирование массивов----------------------------//
+
+//---------------5.1. Обмен значений переменных----------------//
+
+let param1 = 1;
+let param2 = 2;
+[param1, param2] = [param2, param1];
+console.log('param1: ', param1);
+console.log('param2: ', param2);
 
 
+//-------------5.2. Приём и обработка нескольких значений, возвращаемых функцией------------//
 
+async function getFullPost(){
+    return await Promise.all([
+        fetch('/post'),
+        fetch('/comments')
+    ]);
+}
+/*const [post, comments] = getFullPost();
+console.log('post: ', post);
+console.log('comments: ', comments);*/
 
 
 
