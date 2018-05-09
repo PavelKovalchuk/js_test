@@ -42,4 +42,4 @@ var obj = {
 
 var vals = [...obj];
 
-console.log(vals); 
+console.log(vals);
